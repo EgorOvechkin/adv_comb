@@ -1,6 +1,5 @@
 ---
 import Link from '~/components/base/Link.astro'
-import LogoButton from '~/components/widgets/LogoButton.astro'
 import ToTopButton from '~/components/widgets/ToTopButton.astro'
 import ThemeSwitch from '~/components/widgets/ThemeSwitch.astro'
 import SearchSwitch from '~/components/widgets/SearchSwitch.astro'
@@ -19,7 +18,6 @@ validateNavBarLayout(navBarLayout)
 ---
 
 <header class="flex items-center gap-[1.2rem] p-8 lt-md:(px-6 gap-none)">
-  <LogoButton />
   <nav
     class={`flex items-center gap-[1.2rem] w-full lt-md:justify-end
       ${left.length !== 0 && right.length !== 0 ? 'justify-between' : 'justify-end'}`}

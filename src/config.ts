@@ -51,11 +51,7 @@ export const UI: Ui = {
   navBarLayout: {
     left: [],
     right: [
-      'internalNavs',
-      'socialLinks',
-      'searchButton',
       'themeButton',
-      'rssLink',
     ],
   },
   tabbedLayoutTabs: [
