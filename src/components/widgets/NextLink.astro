@@ -1,0 +1,10 @@
+---
+import Link from '~/components/base/Link.astro'
+
+const { href } = Astro.props
+---
+
+<span class="font-mono op-50">&gt; </span>
+<Link class="font-mono op-50! hover:op-75!" href={`../${href}/`}>
+  cd ../{href}
+</Link>

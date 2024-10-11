@@ -21,7 +21,13 @@ interface Props {
 }
 
 const { collectionType, pageToc } = Astro.props
-const validCollectionType = ['blog', 'changelog', 'streams', 'feeds']
+const validCollectionType = [
+  'blog',
+  'changelog',
+  'streams',
+  'feeds',
+  'numeric_systems',
+]
 
 /* Toc */
 const { toc } = FEATURES
@@ -32,7 +38,15 @@ let years: string[] = []
 let blogItems: CollectionEntry<ContentCollectionKey>[]
 let sortedBlogItems: CollectionEntry<ContentCollectionKey>[] = []
 
-if (collectionType === 'blog' || collectionType === 'changelog') {
+function isCollectionTypeAllowed(t: string): t is ContentCollectionKey {
+  return (
+    collectionType === 'blog' ||
+    collectionType === 'changelog' ||
+    collectionType === 'numeric_systems'
+  )
+}
+
+if (isCollectionTypeAllowed(collectionType)) {
   blogItems = await getFilteredPosts(collectionType)
   sortedBlogItems = getSortedPosts(blogItems)
 
@@ -111,7 +125,7 @@ const warningHTML = `The '${collectionType}' collection type does not
 {tocEnabled && <Toc {years} />}
 
 {
-  (collectionType === 'blog' || collectionType === 'changelog') && (
+  isCollectionTypeAllowed(collectionType) && (
     <ul aria-label="Post list">
       {sortedBlogItems.length === 0 ? (
         <div class="py-2 op-50">nothing here yet</div>

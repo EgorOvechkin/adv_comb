@@ -29,6 +29,11 @@ export function getSortedPosts(
   posts: CollectionEntry<ContentCollectionKey>[]
 ): CollectionEntry<ContentCollectionKey>[] {
   return posts.sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+    (a, b) => {
+
+      if (a.data.idx && b.data.idx) { return a.data.idx - b.data.idx }
+
+      return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+    }
   )
 }

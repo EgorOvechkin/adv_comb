@@ -3,7 +3,7 @@ import type { Site, Ui, Features } from './types'
 export const SITE: Site = {
   website: 'https://astro-antfustyle-theme.vercel.app/',
   base: '/',
-  title: 'Astro AntfuStyle Theme',
+  title: 'Advanced Combinatorics',
   description:
     'A customizable, feature-rich Astro theme for blog and portfolio creation',
   author: 'Stephanie Lin',
@@ -14,24 +14,11 @@ export const SITE: Site = {
 export const UI: Ui = {
   internalNavs: [
     {
-      path: '/blog',
-      title: 'Blog',
+      path: '/numeric_systems',
+      title: '"The Best" Numerical System',
       displayMode: 'textToIconOnMobile',
-      text: 'Blog',
+      text: '"The Best" Numerical System',
       icon: 'i-ri-article-line',
-    },
-    {
-      path: '/projects',
-      title: 'Projects',
-      displayMode: 'textToIconOnMobile',
-      text: 'Projects',
-      icon: 'i-ri-lightbulb-line',
-    },
-    {
-      path: '/changelog',
-      title: 'Changelog',
-      displayMode: 'iconHiddenOnMobile',
-      icon: 'i-ri-draft-line',
     },
   ],
   socialLinks: [
@@ -52,6 +39,7 @@ export const UI: Ui = {
     left: [],
     right: [
       'themeButton',
+      'internalNavs'
     ],
   },
   tabbedLayoutTabs: [

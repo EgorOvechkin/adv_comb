@@ -15,6 +15,7 @@ import { SITE } from '~/config'
 import { getUrl } from '~/utils/common-utils'
 
 import type { BgType } from '~/types'
+import NextLink from '~/components/widgets/NextLink.astro'
 
 interface Props {
   title?: string
@@ -23,10 +24,22 @@ interface Props {
   bgType?: BgType | false
   pubDate?: string
   lastModDate?: string
+  useFooter?: boolean
+  useBack?: boolean
+  nextHref?: boolean
 }
 
-const { title, description, ogImage, bgType, pubDate, lastModDate } =
-  Astro.props
+const {
+  title,
+  description,
+  ogImage,
+  bgType,
+  pubDate,
+  lastModDate,
+  useFooter,
+  useBack,
+  nextHref,
+} = Astro.props
 ---
 
 <!doctype html>
@@ -49,7 +62,7 @@ const { title, description, ogImage, bgType, pubDate, lastModDate } =
     <main id="main" class="px-7 py-10">
       <slot />
       {
-        Astro.url.pathname !== getUrl('/') && (
+        Astro.url.pathname !== getUrl('/') && useBack !== false && (
           <div class="prose slide-enter animate-delay-1000! m-auto mt-8 print:hidden">
             <slot name="share" />
             <br />
@@ -57,8 +70,17 @@ const { title, description, ogImage, bgType, pubDate, lastModDate } =
           </div>
         )
       }
+      {
+        nextHref && (
+          <div class="prose slide-enter animate-delay-1000! m-auto mt-8 print:hidden">
+            <slot name="share" />
+            <br />
+            <NextLink href={nextHref} />
+          </div>
+        )
+      }
     </main>
-    <Footer />
+    {useFooter !== false && <Footer />}
     {bgType && <Background type={bgType} />}
     <script>
       /* nprogress */
