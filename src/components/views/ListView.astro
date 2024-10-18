@@ -27,6 +27,7 @@ const validCollectionType = [
   'streams',
   'feeds',
   'numeric_systems',
+  'my_blog',
 ]
 
 /* Toc */
@@ -42,7 +43,8 @@ function isCollectionTypeAllowed(t: string): t is ContentCollectionKey {
   return (
     collectionType === 'blog' ||
     collectionType === 'changelog' ||
-    collectionType === 'numeric_systems'
+    collectionType === 'numeric_systems' ||
+    collectionType === 'my_blog'
   )
 }
 

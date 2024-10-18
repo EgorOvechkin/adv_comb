@@ -14,11 +14,18 @@ export const SITE: Site = {
 export const UI: Ui = {
   internalNavs: [
     {
+      path: '/my_blog',
+      title: 'Blog',
+      displayMode: 'textToIconOnMobile',
+      text: 'Blog',
+      icon: 'i-ri-article-line',
+    },
+    {
       path: '/numeric_systems',
       title: '"The Best" Numerical System',
       displayMode: 'textToIconOnMobile',
       text: '"The Best" Numerical System',
-      icon: 'i-ri-article-line',
+      icon: 'i-mdi-numbers',
     },
   ],
   socialLinks: [
@@ -37,10 +44,7 @@ export const UI: Ui = {
   ],
   navBarLayout: {
     left: [],
-    right: [
-      'themeButton',
-      'internalNavs'
-    ],
+    right: ['themeButton', 'internalNavs'],
   },
   tabbedLayoutTabs: [
     { title: 'Changelog', path: '/changelog' },
