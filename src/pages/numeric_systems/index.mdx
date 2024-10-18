@@ -17,7 +17,7 @@ import ListView from '~/components/views/ListView.astro'
   bgType={frontmatter.bgType}
   ogImage={frontmatter.ogImage}
   useFooter={false}
-  useBack={false}
+  useBack={true}
 >
   <StandardLayout title={frontmatter.title} subtitle={frontmatter.subtitle}>
     <ListView pageToc={frontmatter.toc} collectionType="numeric_systems" />
