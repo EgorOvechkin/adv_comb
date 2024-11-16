@@ -27,6 +27,13 @@ export const UI: Ui = {
       text: '"The Best" Numerical System',
       icon: 'i-mdi-numbers',
     },
+    {
+      path: '/breakthrough',
+      title: 'Small steps to great impact',
+      displayMode: 'textToIconOnMobile',
+      text: 'Small steps to great impact',
+      icon: 'i-mdi-numbers',
+    },
   ],
   socialLinks: [
     {
