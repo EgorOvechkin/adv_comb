@@ -1,0 +1,34 @@
+---
+title: Овечкин Егор
+description: М05-420ск
+subtitle: М05-420ск
+bgType: plum
+toc: false
+ogImage: false
+---
+
+import BaseLayout from '~/layouts/BaseLayout.astro'
+import WideLayout from '~/layouts/WideLayout.astro'
+import TabbedLayout from '~/layouts/TabbedLayout.astro'
+import MinimalisticLayout from '~/layouts/MinimalisticLayout.astro'
+import StandardLayout from '~/layouts/StandardLayout.astro'
+import ListView from '~/components/views/ListView.astro'
+
+<MinimalisticLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  bgType={frontmatter.bgType}
+  ogImage={frontmatter.ogImage}
+  useFooter={false}
+  nextHref={false}
+  useBack={false}
+>
+  <StandardLayout
+    title={frontmatter.title}
+    subtitle={frontmatter.subtitle}
+    render
+  >
+    {/* <WideLayout>Hi</WideLayout>  */}
+    {/* <ListView pageToc={frontmatter.toc} collectionType="blog" /> */}
+  </StandardLayout>
+</MinimalisticLayout>
