@@ -2,17 +2,18 @@
 title: Овечкин Егор
 description: М05-420ск
 subtitle: М05-420ск
-bgType: plum
 toc: false
 ogImage: false
 ---
 
 import BaseLayout from '~/layouts/BaseLayout.astro'
 import WideLayout from '~/layouts/WideLayout.astro'
+import { Image } from 'astro:assets'
 import TabbedLayout from '~/layouts/TabbedLayout.astro'
 import MinimalisticLayout from '~/layouts/MinimalisticLayout.astro'
 import StandardLayout from '~/layouts/StandardLayout.astro'
 import ListView from '~/components/views/ListView.astro'
+import avatar from '../../assets/cv/ava.jpg'
 
 <MinimalisticLayout
   title={frontmatter.title}
@@ -28,7 +29,13 @@ import ListView from '~/components/views/ListView.astro'
     subtitle={frontmatter.subtitle}
     render
   >
+
+    <div>
+      привет
+      <Image src={avatar} alt="My photo"/>
+    </div>
     {/* <WideLayout>Hi</WideLayout>  */}
     {/* <ListView pageToc={frontmatter.toc} collectionType="blog" /> */}
+
   </StandardLayout>
 </MinimalisticLayout>
