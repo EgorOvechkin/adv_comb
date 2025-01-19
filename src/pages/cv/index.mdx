@@ -8,12 +8,16 @@ ogImage: false
 
 import BaseLayout from '~/layouts/BaseLayout.astro'
 import WideLayout from '~/layouts/WideLayout.astro'
-import { Image } from 'astro:assets'
+import { Image, Picture } from 'astro:assets'
 import TabbedLayout from '~/layouts/TabbedLayout.astro'
 import MinimalisticLayout from '~/layouts/MinimalisticLayout.astro'
 import StandardLayout from '~/layouts/StandardLayout.astro'
 import ListView from '~/components/views/ListView.astro'
 import avatar from '../../assets/cv/ava.png'
+
+export function Contacts({ children }) {
+  return <>{children}</>
+}
 
 <MinimalisticLayout
   title={frontmatter.title}
@@ -30,12 +34,23 @@ import avatar from '../../assets/cv/ava.png'
     render
   >
 
-    <div>
-      привет
-      <Image src={avatar} alt="My photo"/>
-    </div>
-    {/* <WideLayout>Hi</WideLayout>  */}
-    {/* <ListView pageToc={frontmatter.toc} collectionType="blog" /> */}
+    <Contacts>
+      **tg:** [@egorovechkin](https://t.me/egorovechkin)\
+      **mail:** [egorka1391@gmail.com](mailto:egorka1391@gmail.com)\
+      **phone:** [+79045493089](tel:+79045493089)
+    </Contacts>
+
+    Студент [онлайн-магистратуры ФПМИ](https://omscmipt.ru/), 1 курс(современная комбинаторика).
+    Окончил бакалавриат мат-меха в УрФУ по специальности «Прикладная информатика» в 2014 году.
+
+    Имею опыт работы в it, в основном в роли frontend разработчика(Typescript, React).
+    На данный момент работаю на должности инженера-программиста в [Контуре](https://kontur.ru/).
+
+    Сфера интересов: it, разработка, машинное обучение.\
+    **Цель обучения в магистратуре**: овладеть методами машинного обучения и анализа данных, поэтому
+    есть желание выполнять научно-исследовательскую работу в этих областях(но открыт к осбуждению).
+
+    <Picture src={avatar} alt="My photo" />
 
   </StandardLayout>
 </MinimalisticLayout>
