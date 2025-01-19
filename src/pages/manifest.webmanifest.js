@@ -23,7 +23,8 @@ export async function GET() {
     background_color: '#fff',
   }
 
-  return new Response(JSON.stringify(manifest), {
+  // TODO create manifest
+  return new Response(JSON.stringify({}), {
     headers: {
       'Content-Type': 'application/manifest+json; charset=utf-8',
     },
