@@ -13,10 +13,15 @@ import TabbedLayout from '~/layouts/TabbedLayout.astro'
 import MinimalisticLayout from '~/layouts/MinimalisticLayout.astro'
 import StandardLayout from '~/layouts/StandardLayout.astro'
 import ListView from '~/components/views/ListView.astro'
-import avatar from '../../assets/cv/ava.png'
+import avatar from '../../assets/cv/ava.jpg'
 
 export function Contacts({ children }) {
-  return <>{children}</>
+  return (
+    <>
+      <div>{children}</div>
+      <hr class={'w-full! mt-0!'} />
+    </>
+  )
 }
 
 <MinimalisticLayout
@@ -37,11 +42,12 @@ export function Contacts({ children }) {
     <Contacts>
       **tg:** [@egorovechkin](https://t.me/egorovechkin)\
       **mail:** [egorka1391@gmail.com](mailto:egorka1391@gmail.com)\
-      **phone:** [+79045493089](tel:+79045493089)
+      **phone:** [+79045493089](tel:+79045493089)\
+      <span class="italic op-50">Екатеринбург(GMT+5)</span>
     </Contacts>
 
     Студент [онлайн-магистратуры ФПМИ](https://omscmipt.ru/), 1 курс(современная комбинаторика).
-    Окончил бакалавриат мат-меха в УрФУ по специальности «Прикладная информатика» в 2014 году.
+    Окончил бакалавриат мат-меха УрФУ по специальности «Прикладная информатика» в 2014 году.
 
     Имею опыт работы в it, в основном в роли frontend разработчика(Typescript, React).
     На данный момент работаю на должности инженера-программиста в [Контуре](https://kontur.ru/).
@@ -50,7 +56,10 @@ export function Contacts({ children }) {
     **Цель обучения в магистратуре**: овладеть методами машинного обучения и анализа данных, поэтому
     есть желание выполнять научно-исследовательскую работу в этих областях(но открыт к осбуждению).
 
-    <Picture src={avatar} alt="My photo" />
+    <details>
+      <summary class="italic op-50">фото(если вам зачем-то оно нужно):</summary>
+      <Picture src={avatar} alt="My photo" />
+    </details>
 
   </StandardLayout>
 </MinimalisticLayout>
